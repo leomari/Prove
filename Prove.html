@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta name ="Mannhullet ntnu webgruppen treff på google">
+    <link href = "prove.css" rel = "stylesheet" type ="text/css">
+    
+    <title>Skriv tittel her</title>
+        
+        <script> </script>
+        
+    </head>
+    
+    <body>
+        
+        <div class="navigasjonsbar">
+            <ul>
+                <li><a href="#c1"> Webgruppen Mannhullet </a></li>
+                <li><a href="#c2"> Kontakt </a></li>
+                <li class ="dropdown">
+                <a href="#c2" class = "dropbtn">Om oss</a>
+                <div class = "dropdown-content">
+                    <a href="#seb">Sebastian</a>
+                    <a href="#andreas">Andreas</a>
+                    <a href = "#alex">Alexander</a>
+                    <a href="#mildrid">Mildrid</a>
+                    <a href="#jonas">Jonas</a>
+                    <a href="#mari">Mari</a>
+                   
+                    
+                </div>
+                </li>
+                <li><a href="#reg"> Registerte medlemmmer  </a></li>
+            </ul>
+        
+        </div>
+        
+       <div class ="head-picture">
+            
+            
+            <img id = "myImg" class="image" src="head.jpg">
+            <img class="loop" src="Zoom.jpg">
+            
+        
+        </div> 
+        
+        <div class="form1">
+        <form id='reg' name = "reg">
+        Name:<br>
+        <input type="text" name = "name" placeholder="Name">
+        <br>
+        Phone:<br>
+            <input type="tel" name ="tel" placeholder="Phone">
+            <br>
+        Mail: <br> <input type = "email" name="mail" placeholder="Mail"><br>
+            Passord: <br> <input placeholder = "Password" name = "passord"><br>
+            
+            <button type = "button" onclick=" whoRegistered(); validateForm()">Registrer!</button>
+            
+        </form>
+            
+            <p id="medlemmer"> Medlemmer </p>
+        </div>
+        
+        <script>
+            
+            function whoRegistered() {
+               var gammel = document.getElementById("medlemmer").innerHTML
+              var navn = document.forms["reg"]["name"].value; document.getElementById("medlemmer").innerHTML = gammel + "<br>" + navn ;
+            
+                
+            }
+            
+        function validateForm() {
+    var n = document.forms["reg"]["name"].value;
+    var t = document.forms["reg"]["tel"].value;
+    var m = document.forms["reg"]["mail"].value;
+    var p = document.forms["reg"]["passord"].value; 
+            
+    if (n == null || n == "") {
+        document.forms["reg"]["name"].style.border= '1px solid red';
+        
+        
+    }
+    
+    if (! m.includes("@") || m == null || m == "" ){
+        document.forms["reg"]["mail"].style.border= '1px solid red'; 
+            } 
+    
+    if ( isNaN(t) || t == null || t == ""  ) {       
+     
+        document.forms["reg"]["tel"].style.border= '1px solid red';
+        
+            }
+            
+           
+}
+            
+        
+        </script>
+        
+        
+        
+        
+         
+        
+        <!-- ************KLIPP OG LIM *********** -->
+        
+        
+        
+        <!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+
+</script>
+        
+     
+
+    
+    </body>
+
+
+
+</html>
